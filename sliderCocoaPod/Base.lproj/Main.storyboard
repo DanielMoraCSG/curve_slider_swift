@@ -1,26 +1,122 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sliderCocoaPod" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5R-ZE-qBA">
+                                <rect key="frame" x="16" y="228" width="288" height="120"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXT-aw-jgg" customClass="SliderCurveView" customModule="sliderCocoaPod" customModuleProvider="target">
+                                        <rect key="frame" x="7" y="0.0" width="274" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Xze-D1-WFd"/>
+                                            <constraint firstAttribute="width" constant="274" id="z44-S9-sbq"/>
+                                        </constraints>
+                                    </view>
+                                    <slider alpha="0.10000000000000001" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cif-dH-2cz">
+                                        <rect key="frame" x="-2" y="44" width="292" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ac2-UG-PGs"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="4oe-UW-a6p"/>
+                                    <constraint firstItem="PXT-aw-jgg" firstAttribute="leading" secondItem="m5R-ZE-qBA" secondAttribute="leading" constant="7" id="u5Q-WZ-Yef"/>
+                                    <constraint firstItem="PXT-aw-jgg" firstAttribute="centerY" secondItem="m5R-ZE-qBA" secondAttribute="centerY" id="wPE-0w-dJM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbh-PG-E5t">
+                                <rect key="frame" x="16" y="410" width="288" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D8f-K7-1Kw" customClass="MoneyHomeView" customModule="sliderCocoaPod" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="9" width="288" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.26274509800000001" green="0.6705882353" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <slider contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="u2A-qv-thY">
+                                        <rect key="frame" x="-2" y="53" width="292" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="Jhr-2d-BCq"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojk-vm-mUh">
+                                <rect key="frame" x="16" y="28" width="288" height="130"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBk-kq-3Od" customClass="TimeHomeView" customModule="sliderCocoaPod" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="288" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <slider contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="UZ4-0D-sw3">
+                                                <rect key="frame" x="-2" y="45" width="292" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="tintColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fwf-vC-PxN"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.2627450980392157" green="0.6705882352941176" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="eeN-i2-p5C"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="m5R-ZE-qBA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hD-WY-KYN"/>
+                            <constraint firstItem="Ojk-vm-mUh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="34c-7L-s5A"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="m5R-ZE-qBA" secondAttribute="bottom" constant="220" id="5gK-rY-c0W"/>
+                            <constraint firstItem="Ojk-vm-mUh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WGT-jr-x6S"/>
+                            <constraint firstItem="m5R-ZE-qBA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ZVS-rm-fqf"/>
+                            <constraint firstItem="Ojk-vm-mUh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="x8C-5T-CnK"/>
+                            <constraint firstItem="m5R-ZE-qBA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yfG-jg-dwN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SliderCurveView" destination="PXT-aw-jgg" id="dDG-gw-fcc"/>
+                        <outlet property="SliderMoneyHome" destination="D8f-K7-1Kw" id="V5q-g4-Qhh"/>
+                        <outlet property="SliderTimeHome" destination="hBk-kq-3Od" id="uF5-eM-2Yg"/>
+                        <outlet property="slider" destination="Cif-dH-2cz" id="zkK-2d-c1V"/>
+                        <outlet property="slider2" destination="UZ4-0D-sw3" id="VDf-bv-vCu"/>
+                        <outlet property="slider3" destination="u2A-qv-thY" id="HR2-69-Nf8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="135" y="138.38028169014083"/>
         </scene>
     </scenes>
 </document>
